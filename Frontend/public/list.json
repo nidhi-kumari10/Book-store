@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "title": "An Easy & Proven Way to Build Good Habits",
+    "description": "Learn how small daily habits can lead to remarkable personal growth and long-term success.",
+    "category": "Self-Help",
+    "price": 349,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 2,
+    "title": "What the Rich Teach Their Kids",
+    "description": "A powerful guide to understanding money, investing, and financial independence.",
+    "category": "Finance",
+    "price": 399,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 3,
+    "title": "An Introduction to Creative Problem Solving",
+    "description": "Develop a programmer’s mindset and learn how to approach problems logically.",
+    "category": "Programming",
+    "price": 499,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 4,
+    "title": "A Handbook of Agile Software Craftsmanship",
+    "description": "Best practices and principles for writing clean, maintainable, and efficient code.",
+    "category": "Programming",
+    "price": 799,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 5,
+    "title": "A Journey of Dreams and Destiny",
+    "description": "An inspiring fictional story about following your dreams and finding your purpose.",
+    "category": "Fiction",
+    "price": 299,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 6,
+    "title": "Steps Towards Success",
+    "description": "Motivational lessons to help you build confidence and achieve your goals.",
+    "category": "Self-Help",
+    "price": 250,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 7,
+    "title": "Learn Web Basics",
+    "description": "A beginner-friendly guide to understanding the fundamentals of HTML.",
+    "category": "Free",
+    "price": 0,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 8,
+    "title": "Design Beautiful Websites",
+    "description": "Learn how to style websites using modern CSS techniques.",
+    "category": "Free",
+    "price": 0,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 9,
+    "title": "From Zero to Hero",
+    "description": "Understand JavaScript fundamentals and start building interactive web apps.",
+    "category": "Programming",
+    "price": 450,
+    "imageLink": "https://images.unsplash.com/photo-1518770660439-4636190af475"
+  },
+  {
+    "id": 10,
+    "title": "Learn Python Step by Step",
+    "description": "A simple and structured approach to learning Python programming.",
+    "category": "Programming",
+    "price": 550,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 11,
+    "title": "Unlock Your Inner Power",
+    "description": "Explore the power of the subconscious mind to shape your thoughts and success.",
+    "category": "Self-Help",
+    "price": 299,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 12,
+    "title": "Fundamentals of DBMS",
+    "description": "Understand database concepts such as normalization, keys, and SQL basics.",
+    "category": "Education",
+    "price": 650,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 13,
+    "title": "Concepts Explained Simply",
+    "description": "A clear explanation of operating system fundamentals for students.",
+    "category": "Education",
+    "price": 700,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 14,
+    "title": "Build UI Faster",
+    "description": "Get started with React and learn how to build fast, reusable UI components.",
+    "category": "Programming",
+    "price": 599,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 15,
+    "title": "Basics to Advanced",
+    "description": "Learn how computer networks work, from fundamentals to real-world usage.",
+    "category": "Education",
+    "price": 720,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 16,
+    "title": "The New Psychology of Success",
+    "description": "Discover how mindset plays a crucial role in achieving success.",
+    "category": "Self-Help",
+    "price": 380,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 17,
+    "title": "Master Your Time",
+    "description": "Practical techniques to improve productivity and manage time effectively.",
+    "category": "Free",
+    "price": 0,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 18,
+    "title": "Grow Your Online Presence",
+    "description": "Learn the basics of digital marketing and online branding.",
+    "category": "Marketing",
+    "price": 499,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 19,
+    "title": "Design Better Experiences",
+    "description": "A practical guide to creating user-friendly UI and UX designs.",
+    "category": "Design",
+    "price": 550,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 20,
+    "title": "From Idea to Execution",
+    "description": "Learn how to transform startup ideas into real-world businesses.",
+    "category": "Business",
+    "price": 450,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 21,
+    "title": "Understand DS Clearly",
+    "description": "Simplified explanation of data structures for coding interviews.",
+    "category": "Programming",
+    "price": 699,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 22,
+    "title": "Problem Solving Techniques",
+    "description": "Improve logical thinking and algorithmic problem-solving skills.",
+    "category": "Programming",
+    "price": 749,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 23,
+    "title": "Become Your Best Self",
+    "description": "A free guide focused on self-growth and personal development.",
+    "category": "Free",
+    "price": 0,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 24,
+    "title": "Introduction to Artificial Intelligence",
+    "description": "Learn the fundamentals of AI and how intelligent systems work.",
+    "category": "Technology",
+    "price": 899,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 25,
+    "title": "Learn ML Concepts",
+    "description": "Understand machine learning basics with real-world examples.",
+    "category": "Technology",
+    "price": 999,
+    "imageLink": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  }
+]
