@@ -1,19 +1,48 @@
 
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation, replace} from "react-router-dom";
 import Login from "./Login";
 import { useForm} from "react-hook-form";
+import axios from 'axios';
+import toast from 'react-hot-toast';
+
 
 const Signup = () => {
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/"
+  
   const {
       register,
       handleSubmit,
       formState: { errors },
     } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = async (data) => {
+      const userInfo = {
+        fullname: data.fullname,
+        emailId: data.emailId,
+        password: data.password
+      }
+    
+      await axios.post("http://localhost:4001/user/signup", userInfo)
+      .then((res)=>{
+        console.log(res.data)
+        if(res.data){
+          toast.success('Signup Successfully!');
+            navigate(from ,{replace:true});
+        }
+        localStorage.setItem("Users",JSON.stringify(res.data.user));
+      })
+      .catch((err)=>{
+       if(err.response){
+        console.log(err);
+        
+         toast.error("Error: "+err.response.data.message);
+       }
+      });
+    }
 
-  const navigate = useNavigate();
+
 
   // auto-open modal
   useEffect(() => {
@@ -31,14 +60,18 @@ const Signup = () => {
         <div className="modal-box w-full max-w-lg border border-pink-500 shadow-xl shadow-pink-500/30 relative">
 
           {/* Close button */}
-          <form method="dialog" onSubmit={handleSubmit(onSubmit)}>
-            <button
-              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-              aria-label="Close"
-            >
-              ✕
-            </button>
-          
+          <form  onSubmit={handleSubmit(onSubmit)}>
+           <button
+  type="button"
+  className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+  aria-label="Close"
+  onClick={() => {
+    document.getElementById("my_modal_3")?.close();
+    navigate("/");
+  }}
+>
+  ✕
+</button>
 
           <h3 className="font-bold text-2xl text-center mb-2">
             Create Your Account
@@ -56,8 +89,8 @@ const Signup = () => {
                 type="text"
                 placeholder="Enter your name"
                 className="input input-bordered w-full mt-1 pl-2"
-                 {...register("name", { required: true })}
-              />{errors.name && <span className='mb-8 text-red-500 text-sm'>This field is required</span>}
+                 {...register("fullname", { required: true })}
+              />{errors.fullname && <span className='mb-8 text-red-500 text-sm'>This field is required</span>}
             </div>
 
             <div>
@@ -66,8 +99,8 @@ const Signup = () => {
                 type="email"
                 placeholder="Enter your email"
                 className="input input-bordered w-full mt-1 pl-2"
-                 {...register("email", { required: true })}
-              />{errors.email && <span className='mb-8 text-red-500 text-sm'>This field is required</span>}
+                 {...register("emailId", { required: true })}
+              />{errors.emailId && <span className='mb-8 text-red-500 text-sm'>This field is required</span>}
             </div>
 
             <div>
@@ -90,7 +123,7 @@ const Signup = () => {
 
             <p className="text-center text-sm">
               Already have an account?{" "}
-              <button type="submit"  className="text-blue-500 underline"   onClick={() => {
+              <button type="button"  className="text-blue-500 underline"   onClick={() => {
     document.getElementById("my_modal_3")?.close();   
     document.getElementById("login_modal")?.showModal();
   }}>

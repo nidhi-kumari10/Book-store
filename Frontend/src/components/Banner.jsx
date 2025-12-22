@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from "../assets/banner.png"
+import banner from "../assets/banner.jpg"
 
 const Banner = () => {
   return (
@@ -29,11 +29,11 @@ const Banner = () => {
 </label>
 <div className="validator-hint hidden">Enter valid email address</div>
       </div>
-<button className="btn mt-6 btn-secondary p-2 bg-pink-500 text-white font-bold">Secondary</button>
+<button className="btn mt-6 btn-secondary p-2 bg-pink-500 text-white font-bold">Get Started</button>
     
       </div>
       <div className='w-full md:w-1/2 flex justify-center md:mt-[50px] order-1'>
-      <img src={banner} className='w-[400px] h-[400px] object-contain'></img>
+      <img src={banner} className='w-[500px] h-[300px] object-contain'></img>
       </div>
     </div>
   )
