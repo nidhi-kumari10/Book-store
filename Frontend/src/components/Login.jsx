@@ -3,44 +3,46 @@ import {Link} from 'react-router-dom';
 import { useForm} from "react-hook-form";
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-
+  const navigate = useNavigate();
    const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
-  const onSubmit = async (data) => {
-     const userInfo = {
-            emailId: data.emailId,
-            password: data.password
-          }
-        
-          await axios.post("http://localhost:4001/user/login", userInfo)
-          .then((res)=>{
-            console.log(res.data)
-            if(res.data){
-             toast.success('Loggedin Successfully!');
-              document.getElementById("login_modal")?.close();
-             setTimeout(()=>{
-            
-              window.location.reload(); 
-              localStorage.setItem("Users",JSON.stringify(res.data.user));
-             },1000)
-                
-            }
-           
-          })
-          .catch((err)=>{
-           if(err.response){
-            console.log(err);
-            toast.error("Error: "+err.response.data.message);
-             document.getElementById("login_modal")?.close();
-            setTimeout(()=>{},2000)
-           }
-          });
+ const onSubmit = async (data) => {
+  try {
+    const userInfo = {
+      email: data.emailId,
+      password: data.password
+    };
+
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/user/login`,
+      userInfo,
+      { withCredentials: true }
+    );
+
+    console.log(res.data);
+
+    if (res.data) {
+      toast.success("Loggedin Successfully!");
+      document.getElementById("login_modal")?.close();
+
+      localStorage.setItem("Users", JSON.stringify(res.data.user));
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+
+  } catch (err) {
+    console.log(err);
+    toast.error(err?.response?.data?.message || "Login failed");
   }
+};
   return (
 
     <>

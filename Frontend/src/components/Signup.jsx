@@ -24,7 +24,7 @@ const Signup = () => {
       email: data.emailId,
       password: data.password
     };
-console.log("API URL:", import.meta.env.VITE_API_URL);
+
     const res = await axios.post(
       `${import.meta.env.VITE_API_URL}/user/signup`,
       userInfo,
