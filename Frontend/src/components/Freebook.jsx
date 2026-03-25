@@ -14,6 +14,7 @@ const Freebook = () => {
          const getBook = async()=>{
             try {
          const response = await axios.get("http://localhost:4001/book");
+        
          setBook(response.data.filter((book)=>book?.category==="Free"));
             } catch (error) {
               console.log(error);

@@ -1,33 +1,44 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 import bookRoute from "./route/book.route.js";
-import userRoute from "./route/user.route.js"
-import cors from 'cors';
-
-const app = express();
+import userRoute from "./route/user.route.js";
+import cors from "cors";
 
 dotenv.config();
 
+const app = express();
+
 // middleware
-app.use(cors());
+
 app.use(express.json());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://bookstore-frontend-sand.vercel.app/"
+  ],
+  credentials: true
+}));
 
-const PORT = process.env.PORT || 4000;
-const  URI = process.env.MongoDBURI;
+const PORT = process.env.PORT || 4001;
+const URI = process.env.MongoDBURI;
 
-// connect to mongodb
+const startServer = async () => {
+  try {
+    await mongoose.connect(URI);
+    console.log("✅ MongoDB Connected");
 
-try{
-    mongoose.connect(URI);
-    console.log("Connected to Database");
-}catch(error){
-    console.log("Error", error);
-}
+    app.use("/book", bookRoute);
+    app.use("/user", userRoute);
 
-app.use("/book", bookRoute);
-app.use("/user",userRoute);
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
 
-app.listen(PORT, ()=>{
-    console.log(`Server is listening on port ${PORT}`);
-})
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error);
+    process.exit(1);
+  }
+};
+
+startServer();

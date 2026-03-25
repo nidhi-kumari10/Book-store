@@ -17,30 +17,30 @@ const Signup = () => {
       handleSubmit,
       formState: { errors },
     } = useForm()
-    const onSubmit = async (data) => {
-      const userInfo = {
-        fullname: data.fullname,
-        emailId: data.emailId,
-        password: data.password
-      }
-    
-      await axios.post("http://localhost:4001/user/signup", userInfo)
-      .then((res)=>{
-        console.log(res.data)
-        if(res.data){
-          toast.success('Signup Successfully!');
-            navigate(from ,{replace:true});
-        }
-        localStorage.setItem("Users",JSON.stringify(res.data.user));
-      })
-      .catch((err)=>{
-       if(err.response){
-        console.log(err);
-        
-         toast.error("Error: "+err.response.data.message);
-       }
-      });
-    }
+   const onSubmit = async (data) => {
+  try {
+    const userInfo = {
+      fullName: data.fullname,
+      email: data.emailId,
+      password: data.password
+    };
+console.log("API URL:", import.meta.env.VITE_API_URL);
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/user/signup`,
+      userInfo,
+      { withCredentials: true }
+    );
+
+    console.log(res.data);
+
+    toast.success("Signup Successfully!");
+    navigate(from, { replace: true });
+
+  } catch (error) {
+    console.error(error);
+    toast.error("Signup failed");
+  }
+};
 
 
 
